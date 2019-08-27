@@ -7077,7 +7077,15 @@ div {
   .latest-product-sidebar h5 {
     border-bottom: 1px solid #DDDDDD;
     padding-bottom: 15px;
-    margin-bottom: 30px; }
+    margin-bottom: 30px;
+    position: relative; }
+    .latest-product-sidebar h5::after {
+      content: ' ';
+      width: 3.684em;
+      border-bottom: 2px solid #FED700;
+      position: absolute;
+      bottom: -1px;
+      left: 0; }
   .latest-product-sidebar ul {
     padding: 0; }
     .latest-product-sidebar ul li {
@@ -7138,7 +7146,7 @@ div {
   color: #b9b9b9; }
 
 .search-content .product-item {
-  margin: 0; }
+  margin: 0 0 15px 0; }
 
 .nav-list {
   padding: 0; }
@@ -7161,3 +7169,15 @@ div {
     .nav-list li a:hover::before {
       content: "\f14a";
       color: #FED700; }
+
+.pagination .page-link, .pagination .page-info {
+  color: #6e6e6e; }
+
+.pagination .page-item.disabled .page-link {
+  background: #F5F5F5; }
+
+.pagination .page-item.active .page-link {
+  background: #FED700;
+  border: 1px solid #FED700;
+  color: #333;
+  font-weight: bold; }
