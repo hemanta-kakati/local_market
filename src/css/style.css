@@ -1,3 +1,4 @@
+/********** Bootstrap classes *****************/
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
@@ -7031,6 +7032,20 @@ ul {
 a {
   text-decoration: none; }
 
+/*********** Header Bottom Ribbon **************/
+.h-ribbon {
+  border-bottom: 1px solid #DDDDDD;
+  padding-bottom: 15px;
+  margin-bottom: 30px;
+  position: relative; }
+  .h-ribbon::after {
+    content: ' ';
+    width: 3.684em;
+    border-bottom: 2px solid #FED700;
+    position: absolute;
+    bottom: -1px;
+    left: 0; }
+
 .product-card {
   margin-bottom: 15px; }
   .product-card .item-category {
@@ -7069,7 +7084,7 @@ a {
           margin: 10px 10px; }
   .product-card .product-item-lv {
     padding: 50px 0;
-    border-bottom: 1px solid #b9b9b9; }
+    border-bottom: 1px solid #DDDDDD; }
     .product-card .product-item-lv .image-wrapper {
       width: 30%; }
       .product-card .product-item-lv .image-wrapper img {
@@ -7142,20 +7157,9 @@ a {
 .products-carousel .product-nav-tab {
   border-bottom: 1px solid #DDDDDD; }
 
+/********** Sidebars ************/
 .latest-product-sidebar {
   margin-top: 30%; }
-  .latest-product-sidebar h5 {
-    border-bottom: 1px solid #DDDDDD;
-    padding-bottom: 15px;
-    margin-bottom: 30px;
-    position: relative; }
-    .latest-product-sidebar h5::after {
-      content: ' ';
-      width: 3.684em;
-      border-bottom: 2px solid #FED700;
-      position: absolute;
-      bottom: -1px;
-      left: 0; }
   .latest-product-sidebar ul {
     padding: 0; }
     .latest-product-sidebar ul li {
@@ -7169,6 +7173,52 @@ a {
       .latest-product-sidebar ul li .price h6 {
         font-weight: bold; }
 
+.filters .brands-wrapper, .filters .colors-wrapper, .filters .price-slider-wrapper {
+  border-bottom: 1px solid #DDDDDD;
+  padding-bottom: 20px;
+  margin-bottom: 28px; }
+  .filters .brands-wrapper h6, .filters .colors-wrapper h6, .filters .price-slider-wrapper h6 {
+    font-weight: bold; }
+
+.filters .price-slider-wrapper {
+  width: 100%; }
+  .filters .price-slider-wrapper .range-slider {
+    width: 100%;
+    -webkit-appearance: none;
+    /* Override default CSS styles */
+    appearance: none;
+    height: 8px;
+    /* Specified height */
+    background: #d3d3d3;
+    /* Grey background */
+    outline: none;
+    /* Remove outline */
+    opacity: 0.7;
+    /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s;
+    /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+    z-index: -1; }
+    .filters .price-slider-wrapper .range-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 25px;
+      height: 25px;
+      background: #FED700;
+      border-radius: 100%;
+      cursor: pointer; }
+    .filters .price-slider-wrapper .range-slider::-moz-range-thumb {
+      width: 25px;
+      /* Set a specific slider handle width */
+      height: 25px;
+      /* Slider handle height */
+      background: #FED700;
+      /* Green background */
+      border-radius: 100%;
+      cursor: pointer;
+      /* Cursor on hover */ }
+
+/************** Owl Slider *************/
 .owl-prev, .owl-next {
   width: 15px;
   position: absolute;
@@ -7220,22 +7270,31 @@ a {
   padding: 0; }
   .nav-list li {
     list-style-type: none;
-    margin-bottom: 8px; }
-    .nav-list li a {
-      color: #333;
-      display: inline-block;
-      line-height: 1.714em;
-      padding: 5px; }
-      .nav-list li a:hover {
-        text-decoration: none; }
-    .nav-list li a::before {
+    margin-bottom: 8px;
+    position: relative; }
+    .nav-list li input[type=checkbox] {
+      opacity: 0; }
+    .nav-list li label::before {
+      position: absolute;
+      top: -2px;
+      left: 0;
       content: "\f096";
-      font-family: FontAwesome;
       display: inline-block;
-      margin-right: 15px;
-      font-size: 1.143em; }
-    .nav-list li a:hover::before {
-      content: "\f14a";
+      color: #b9b9b9;
+      font-family: FontAwesome;
+      font-size: 1.2em; }
+    .nav-list li label::after {
+      position: absolute;
+      left: 1px;
+      top: 2px;
+      display: inline-block; }
+    .nav-list li input[type=checkbox] + label::after {
+      content: none; }
+    .nav-list li input[type=checkbox]:checked + label::after {
+      content: "\f00c";
+      font-family: FontAwesome;
+      font-size: 0.8em; }
+    .nav-list li input[type=checkbox]:checked + label::after, .nav-list li input[type=checkbox]:checked + label::before {
       color: #FED700; }
 
 .pagination .page-link, .pagination .page-info {

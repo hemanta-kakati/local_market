@@ -21,8 +21,8 @@
 
         <!-- Latest Products Sidebar -->
         <div class="col-lg-3">
-          <div class="latest-product-sidebar">
-            <h5>Latest product</h5>
+          <div class="latest-product-sidebar mb-4">
+            <h5 class="h-ribbon">Latest product</h5>
             <ul>
 
               <li>
@@ -287,33 +287,75 @@
 
         <!-- Sidebar (filters) -->
         <div class="col-lg-3">
-          <div class="sidebar">
+          <aside class="sidebar">
             <div class="filters">
-              <div class="brands">
-                <h6>Brands</h6>
+              <h5 class="h-ribbon">Filters</h5>
+              <div class="brands-wrapper">
+                <h6 class="mb-4">Brands</h6>
                 <ul class="nav-list">
                   <li>
-                    <a href="#">Acer</a> (5)
+                    <input type="checkbox" name="brand-acer" id="brand-acer">
+                    <label for="brand-acer">Acer <span class="text-secondary">(5)</span></label>
                   </li>
                   <li>
-                    <a href="#">Samsung</a> (7)
+                    <input type="checkbox" name="brand-samsung" id="brand-samsung">
+                    <label for="brand-samsung">Samsung <span class="text-secondary">(15)</span></label>
                   </li>
                   <li>
-                    <a href="#">Apple</a> (17)
+                    <input type="checkbox" name="brand-apple" id="brand-apple">
+                    <label for="brand-apple">Apple <span class="text-secondary">(25)</span></label>
                   </li>
                   <li>
-                    <a href="#">Sony</a> (8)
+                    <input type="checkbox" name="brand-sony" id="brand-sony">
+                    <label for="brand-sony">Sony <span class="text-secondary">(15)</span></label>
                   </li>
                   <li>
-                    <a href="#">Microsoft</a> (5)
+                    <input type="checkbox" name="brand-ms" id="brand-ms">
+                    <label for="brand-ms">Microsoft <span class="text-secondary">(8)</span></label>
                   </li>
                   <li>
-                    <a href="#">Uncategorised</a> (20)
+                    <input type="checkbox" name="brand-uncat" id="brand-uncat">
+                    <label for="brand-uncat">Uncategorised <span class="text-secondary">(125)</span></label>
                   </li>
                 </ul>
               </div>
+
+              <div class="colors-wrapper">
+                <h6 class="mb-4">Color</h6>
+                <ul class="nav-list">
+                  <li>
+                    <input type="checkbox" name="brand-acer" id="color-black">
+                    <label for="color-black">Black <span class="text-secondary">(5)</span></label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="color-red" id="color-red">
+                    <label for="color-red">Red <span class="text-secondary">(2)</span></label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="color-yellow" id="color-yellow">
+                    <label for="color-yellow">Yellow <span class="text-secondary">(4)</span></label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="color-silver" id="color-silver">
+                    <label for="color-silver">Silver <span class="text-secondary">(3)</span></label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="color-white" id="color-white">
+                    <label for="color-white">White <span class="text-secondary">(6)</span></label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="color-all" id="color-all">
+                    <label for="color-all">All colors <span class="text-secondary">(55)</span></label>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="price-slider-wrapper">
+                <h6>Price</h6>
+                <input type="range" min="1" max="100" value="50" class="range-slider" id="myRange">
+              </div>
             </div>
-          </div>
+          </aside>
         </div>
 
         <!-- Search Content Section -->
@@ -576,6 +618,7 @@
         </div>
       </div>
     </div>
+    </div>
   </section>
 
 
@@ -617,6 +660,9 @@
       navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
       dotsEach: true
     })
+  </script>
+  <script>
+
   </script>
 </body>
 

@@ -1,6 +1,5 @@
 
 
-
 // imports 
 // @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 @import "_project_variables.scss";
@@ -13,7 +12,7 @@
 
 div {
     box-sizing: border-box;
-}
+} 
 
 // Global Styles 
 ul {
@@ -25,6 +24,27 @@ ul {
 a {
     text-decoration: none;
 }
+
+
+
+/*********** Header Bottom Ribbon **************/
+.h-ribbon {
+    border-bottom: 1px solid $grey;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    position: relative;
+
+    &::after {
+        content: ' ';
+        width: 3.684em;
+        border-bottom: 2px solid $yellow;
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+    }
+}
+
+
 
 .product-card {
     margin-bottom: 15px;
@@ -90,7 +110,7 @@ a {
     // product-item List View Styling
     .product-item-lv {
         padding: 50px 0;
-        border-bottom: 1px solid $grey-10;
+        border-bottom: 1px solid $grey;
 
         .image-wrapper {
             width: 30%; 
@@ -235,111 +255,147 @@ a {
 }
     
 
-    .latest-product-sidebar {
-        margin-top: 30%;
+/********** Sidebars ************/
 
-        h5 {
-            border-bottom: 1px solid $grey;
-            padding-bottom: 15px;
-            margin-bottom: 30px;
-            position: relative;
-
-            &::after {
-                content: ' ';
-                width: 3.684em;
-                border-bottom: 2px solid $yellow;
-                position: absolute;
-                bottom: -1px;
-                left: 0;
-            }
-        }
-        
-
-        ul {
-            padding: 0;
-
-            li {
-                list-style-type: none;
-                margin-bottom: 30px;
+.latest-product-sidebar {
+    margin-top: 30%;
     
-                .thumbnail-wrapper {
-                    width: 45%;
-                    padding-right: 3%;
+    ul {
+        padding: 0;
 
-                    img {
-                        width: 100%;
-                    }
-                }
+        li {
+            list-style-type: none;
+            margin-bottom: 30px;
 
-                .price h6 {
-                    font-weight: bold;
+            .thumbnail-wrapper {
+                width: 45%;
+                padding-right: 3%;
+
+                img {
+                    width: 100%;
                 }
+            }
+
+            .price h6 {
+                font-weight: bold;
             }
         }
     }
+}
 
-    .owl-prev, .owl-next {
-        width: 15px;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        display: block !important;
-        border:0px solid black;
-    }
-    .owl-prev { left: -20px; }
-    .owl-next { right: -20px; }
-    .owl-prev i, .owl-next i {transform : scale(2,5); color: #ccc;}
-
-
-    // Search Result Styling
-    .search-result-wrapper{
-
-
-        // Search Control Bar
-        .search-control-bar {
-            background: $white-smoke;
-            padding: 8px 18px;
-            border-radius: 5px;
-            margin: 0;
-
-            //View Icons
-            .view-icons {
-                max-width: 200px;
-
-                a {
-                    color: $grey;
-                    padding: 0;
-
-                    .fa {
-                        font-size: 1.4em;
-                    }
-
-                    &:hover, &.active {
-                        color: #333;
-                    }
-                }
-            }
-
-            select, input[type=number] {
-                border:1px solid rgb(177, 175, 175);
-                padding: 5px;
-                border-radius: 20px;
-                background: #fff;
-                color: grey;
-            }
-
-            input[type=number]{
-                width: 80px;
-            }
+.filters {
+    .brands-wrapper, .colors-wrapper, .price-slider-wrapper {
+        h6 {
+            font-weight: bold;
         }
 
-        // Input Pagination
-        .input-pagination{
+        border-bottom: 1px solid $grey;
+        padding-bottom: 20px;
+        margin-bottom: 28px;
+    }
+
+    .price-slider-wrapper {
+        width: 100%;
+
+        .range-slider {
+            width: 100%;
+            -webkit-appearance: none;  /* Override default CSS styles */
+            appearance: none;
+            height: 8px; /* Specified height */
+            background: #d3d3d3; /* Grey background */
+            outline: none; /* Remove outline */
+            opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+            -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+            transition: opacity .2s;
+            z-index: -1;
+
+            &::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                appearance: none;
+                width: 25px;
+                height: 25px;
+                background: $yellow;
+                border-radius: 100%;
+                cursor: pointer;
+            }
+
+            &::-moz-range-thumb {
+                width: 25px; /* Set a specific slider handle width */
+                height: 25px; /* Slider handle height */
+                background: $yellow; /* Green background */
+                border-radius: 100%;
+                cursor: pointer; /* Cursor on hover */
+              }
+        }
+    }
+}
+
+
+
+/************** Owl Slider *************/
+
+.owl-prev, .owl-next {
+    width: 15px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block !important;
+    border:0px solid black;
+}
+.owl-prev { left: -20px; }
+.owl-next { right: -20px; }
+.owl-prev i, .owl-next i {transform : scale(2,5); color: #ccc;}
+
+
+// Search Result Styling
+.search-result-wrapper{
+
+
+    // Search Control Bar
+    .search-control-bar {
+        background: $white-smoke;
+        padding: 8px 18px;
+        border-radius: 5px;
+        margin: 0;
+
+        //View Icons
+        .view-icons {
+            max-width: 200px;
+
             a {
-                color: $grey-10;
+                color: $grey;
+                padding: 0;
+
+                .fa {
+                    font-size: 1.4em;
+                }
+
+                &:hover, &.active {
+                    color: #333;
+                }
             }
         }
+
+        select, input[type=number] {
+            border:1px solid rgb(177, 175, 175);
+            padding: 5px;
+            border-radius: 20px;
+            background: #fff;
+            color: grey;
+        }
+
+        input[type=number]{
+            width: 80px;
+        }
     }
+
+    // Input Pagination
+    .input-pagination{
+        a {
+            color: $grey-10;
+        }
+    }
+}
 
 .search-content {
     .product-item{
@@ -348,37 +404,54 @@ a {
 }
 
 .nav-list {
-
     padding: 0;    
+
     li {
         list-style-type: none;
         margin-bottom: 8px;
+        position: relative;
 
-        a {
-            color: #333;
-            display: inline-block;
-            line-height: 1.714em;
-            padding: 5px;
-
-            &:hover {
-                text-decoration: none;
+            input[type=checkbox] {
+                opacity: 0;
             }
-        }
 
-        a::before {
-            content: "\f096";
-            font-family: FontAwesome;
-            display: inline-block;
-            margin-right: 15px;
-            font-size: 1.143em;
-        }
+            label{
 
-        a:hover::before {
-            content: "\f14a";
-            color: $yellow;
+                &::before {
+                    position: absolute;
+                    top: -2px;
+                    left: 0;
+                    content: "\f096";
+                    display: inline-block;
+                    color: $grey-10;
+                    font-family: FontAwesome;
+                    font-size: 1.2em;
+                }
+
+                &::after {
+                    position: absolute;
+                    left: 1px;
+                    top: 2px;
+                    display: inline-block;
+                }
+            }
+
+            input[type=checkbox] + label::after {
+                content: none;
+            }
+
+            input[type=checkbox]:checked + label::after {
+                content: "\f00c";
+                font-family: FontAwesome;
+                font-size: 0.8em;
+            }
+
+            input[type=checkbox]:checked + label::after, input[type=checkbox]:checked + label::before {
+                color: $yellow;
+            }
+
         }
     }
-}
 
 // Bootstrap pagination
 .pagination {
