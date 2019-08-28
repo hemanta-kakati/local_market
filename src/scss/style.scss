@@ -16,16 +16,44 @@ div {
 }
 
 // Global Styles 
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
 .product-card {
+    margin-bottom: 15px;
+
+
+    // product-item-* inner classes but has global style
+    .item-category {
+        color: $grey-43;
+        margin-bottom: 10px;
+        display: inline-block;
+    }
+
+    .wl-wrapper {
+        border-top: 1px solid $grey;
+
+        a {
+            color: gray;
+        }
+        .fa {
+            color: $grey-10;
+        }
+    }
+
     .product-item {
         margin: 30px 12px 15px 12px;
-        // margin-bottom: 15px;
         padding: 10px; 
-        // margin-top: 30px;
 
         &:hover {
             box-shadow: 1px 1px 10px 2px $grey;
-            // border: 1px solid;
 
             .price-wrapper .add-to-cart {
                 background: $yellow;
@@ -36,14 +64,6 @@ div {
             display: block;
             width: 70%;
             margin: 0 auto;
-        }
-
-        // &:nth-child(even){
-        //     border-right: 1px solid $grey;
-        // }
-
-        &:hover {
-
         }
 
         .price-wrapper {
@@ -64,28 +84,112 @@ div {
                 }
             }
         }
+    } //product-item ends here 
 
-        .wl-wrapper {
-            border-top: 1px solid $grey;
 
-            a {
-                color: gray;
+    // product-item List View Styling
+    .product-item-lv {
+        padding: 50px 0;
+        border-bottom: 1px solid $grey-10;
+
+        .image-wrapper {
+            width: 30%; 
+
+            img {
+                width: 90%;
+                display: block;
+                margin: 0 auto;
             }
-            .fa {
-                color: #333;
+        }
+        // product info div 
+        .info-wrapper {
+            width: 45%;
+
+            //ul tag that is used to write features
+            .bullet-features{
+                font-size: 0.9em;
+                color: $grey-43;
+                margin-top: 28px;
+
+                li {
+                    padding: 8px 0; 
+
+                    &::before {
+                        content: '\f1db';
+                        font-family: FontAwesome;
+                        display: inline-block;
+                        margin-right: 8px;
+                        font-size: 0.9em;
+                    }
+                }
             }
         }
 
+        .buy-wrapper {
+            width: 20%;
+
+            .add-to-cart {
+                width: 100%;
+                margin-top: 25px;
+    
+                a {
+                    display: block;
+                    background: $yellow;
+                    padding: 12px;
+                    border-radius: 25px;
+                    text-align: center;
+                    text-decoration: none;
+                    font-weight: bold;
+                    color: #fff;
+
+                    &:hover {
+                        background: #333;
+                    }
+                }
+            }
+
+            .wl-wrapper {
+                border: none;
+                margin-top: 20px;
+            }
+        }
+    }
+}
+
+// Star icons (ratings)
+.star-rating {
+    .fa {
+        color: $yellow;
     }
 }
 
 
-// Responsive styles 
+/*********** Responsive styles *************/
 
-// Responsive, for xs screen (upto 575px)
-@media only screen and (max-width: 575px) {
+// Style for below 760px
+@include media-breakpoint-down(sm){
+    // Global styles 
+    h5 {
+        font-size: 80%;
+        font-weight: bold;
+    }
 
-    // Display 2 product card items 
+    .product-card {
+        
+        .product-item-lv {
+            .image-wrapper {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+
+// Style for below 575px
+@include media-breakpoint-down(xs) {
+
     .search-content{
         .product-item{
             width: 50%;
@@ -99,8 +203,13 @@ div {
 
 // Responsive, for less than 300px screen size
 @media only screen and (max-width: 300px) {
+    // Global styles
+    h5 {
+        font-size: 70%;
+        font-weight: bold;
+    }
 
-    // Display only single product card item
+    //Display only single product card item
     .search-content{
         .product-item{
             width: 100%;
@@ -123,71 +232,7 @@ div {
     .product-nav-tab {
         border-bottom: 1px solid $grey;
     }
-        .product-card {
-            // padding: 50px;
-        }
-
-        // .product-item {
-        //     margin: 30px 12px 15px 12px;
-        //     // margin-bottom: 15px;
-        //     padding: 10px; 
-        //     // margin-top: 30px;
-
-        //     &:hover {
-        //         box-shadow: 1px 1px 10px 2px $grey;
-        //         // border: 1px solid;
-
-        //         .price-wrapper .add-to-cart {
-        //             background: $yellow;
-        //         }
-        //     }
-
-        //     img {
-        //         display: block;
-        //         width: 70%;
-        //         margin: 0 auto;
-        //     }
-
-        //     &:nth-child(even){
-        //         border-right: 1px solid $grey;
-        //     }
-
-        //     &:hover {
-
-        //     }
-
-        //     .price-wrapper {
-        //         height: 70px;
-
-        //         .add-to-cart {
-        //             width: 45px;
-        //             height: 45px;
-        //             border-radius: 100%;
-        //             background: $grey;
-        //             margin-bottom: 15px;
-
-        //             .fa {
-        //                 font-size: 1.6em;
-        //                 color: #fff;
-        //                 display: block;
-        //                 margin: 10px 10px;
-        //             }
-        //         }
-        //     }
-
-        //     .wl-wrapper {
-        //         border-top: 1px solid $grey;
-
-        //         a {
-        //             color: gray;
-        //         }
-        //         .fa {
-        //             color: #333;
-        //         }
-        //     }
-
-        // }
-    }
+}
     
 
     .latest-product-sidebar {
@@ -223,12 +268,6 @@ div {
 
                     img {
                         width: 100%;
-                    }
-                }
-
-                .star-rating {
-                    .fa {
-                        color: $yellow;
                     }
                 }
 
@@ -297,7 +336,7 @@ div {
         // Input Pagination
         .input-pagination{
             a {
-                color:rgb(185, 185, 185);
+                color: $grey-10;
             }
         }
     }
@@ -345,7 +384,7 @@ div {
 .pagination {
 
         .page-link, .page-info {
-            color: rgb(110, 110, 110);
+            color: $grey-43;
         }
 
         .page-item.disabled {
